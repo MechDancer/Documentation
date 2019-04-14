@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Standalone TC | MechDancer Documentation</title>
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/MechDancer/mechdancer.github.io/master/css/images/favicon.png">
+  <link rel="alternate" href="/Documentation/atom.xml" title="MechDancer Documentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AbstractStandalone tc is a simple implementation of the concept of responsive robot control system development. In robot programming, in most cases, the sensor is read in the loop and the current is o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Standalone TC">
+<meta property="og:url" content="https://www.mechdancer.org/standalonetc/index.html">
+<meta property="og:site_name" content="MechDancer Documentation">
+<meta property="og:description" content="AbstractStandalone tc is a simple implementation of the concept of responsive robot control system development. In robot programming, in most cases, the sensor is read in the loop and the current is o">
+<meta property="og:locale" content="en_US">
+<meta property="og:updated_time" content="2019-04-14T07:00:00.491Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Standalone TC">
+<meta name="twitter:description" content="AbstractStandalone tc is a simple implementation of the concept of responsive robot control system development. In robot programming, in most cases, the sensor is read in the loop and the current is o">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Documentation/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+</html>
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href="/Documentation/">
+				MechDancer Documentation
+			</a>
+			<div class="menu">
+				<ul class="h-list">
+					
+						<li>
+							<a class="flat-box nav-home" href="/Documentation/">
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class="flat-box nav-archives" href="/Documentation/archives">
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class="underline"></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search">
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a href="javascript:void(0)"><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class="s-menu"><a href="javascript:void(0)"><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class="nav-sub container container--flex">
+			<a class="logo" href="javascript:void(0)">
+				Word of Forks
+			</a>
+
+			<ul class="switcher h-list">
+				<li class="s-comment"><a href="javascript:void(0)"><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class="s-top"><a href="javascript:void(0)"><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class="s-toc"><a href="javascript:void(0)"><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/Documentation/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/Documentation/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-standalonetc" class="post white-box article-type-post" itemscope itemprop="blogPost">
+	<section class="meta">
+	<h2 class="title">
+  	<a href="/Documentation/standalonetc/">
+    	Standalone TC
+    </a>
+  </h2>
+	<!-- <time>
+		Jan 1, 9102
+	</time> -->
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">2.</span> <span class="toc-text">Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminology"><span class="toc-number">2.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effector"><span class="toc-number">2.2.</span> <span class="toc-text">Effector</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Motor"><span class="toc-number">2.2.1.</span> <span class="toc-text">Motor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servo"><span class="toc-number">2.2.2.</span> <span class="toc-text">Servo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sensor"><span class="toc-number">2.3.</span> <span class="toc-text">Sensor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Encoder"><span class="toc-number">2.3.1.</span> <span class="toc-text">Encoder</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Robot"><span class="toc-number">2.4.</span> <span class="toc-text">Robot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Use-case"><span class="toc-number">2.5.</span> <span class="toc-text">Use case</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+			<h3 class="title">
+			Repo: <a href="https://github.com/StandaloneTC">
+						slave, host, protocol
+					</a>
+				</h3>	
+			<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><em>Standalone tc</em> is a simple implementation of the concept of responsive robot control system development. In robot programming, in most cases, the sensor is read in the loop and the current is output to the device. Such a program structure is not friendly to development because there must be coupling between instructions and controls. Reactive  system can avoid all problems, although the bottom layer is still looping through the driver. <em>Standalone tc</em> is divided into three parts: <em>host</em> - upper-level responsive dependencies, <em>slave</em> - lower-level controller communication, <em>protocol</em> - upper-lower and lower-level communication protocols. Among them <a href="https://www.mechdancer.org/Documentation/dataflow/"><em>dataflow</em></a> is responsible for the establishment of the upper layer responsive network. In addition, <em>host</em> provides tools for managing relationships between components from <a href="https://www.mechdancer.org/Documentation/dependency/"><em>dependency</em></a>.</p>
+<p>Like its name <strong>Standalone</strong>, its purpose is to build a reactive robot control system that is not specific to a development platform. Therefore, when you change the platform, you only need to modify the implementation to the lower layer. We implemented this architecture first on FTC, so <em>slave</em> is the FTCRobotController App.</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><h3 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h3><ul>
+<li><em>Effector</em> — is a device that is only responsible for output, and its data node is <em>target</em>.</li>
+<li><em>Sensor</em> — is a device that is only responsible for input, and its data node is <em>source</em>.</li>
+<li><em>Robot</em> — is a <em>dynamic scope</em>, can load components.</li>
+<li><em>Robot component</em> — is a special component with <code>init</code> and <code>stop</code> lifecycles.</li>
+</ul>
+<h3 id="Effector"><a href="#Effector" class="headerlink" title="Effector"></a>Effector</h3><p>The data node of all Effector types is <code>OutputDriver&lt;T&gt;</code>, which can be passed to the next node periodically when receiving data in the dataflow. Effector data nodes in the link should be the last end, and it will communicate to the network even when the robot starts. Let’s see most common effectors.</p>
+<h4 id="Motor"><a href="#Motor" class="headerlink" title="Motor"></a>Motor</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Motor</span></span>(name: String, <span class="keyword">private</span> <span class="keyword">val</span> direction: Direction = Direction.FORWARD) :</span><br><span class="line">    NamedComponent&lt;Motor&gt;(name), Device, PowerOutput &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">val</span> power = OutputDriver&lt;<span class="built_in">Double</span>&gt; &#123; raw -&gt;</span><br><span class="line">        raw.checkedValue(-<span class="number">1.0</span>..<span class="number">1.0</span>)?.let &#123;</span><br><span class="line">            it * direction.sign</span><br><span class="line">        &#125; ?: logger.warning(<span class="string">"Invalid motor power value: <span class="variable">$raw</span>"</span>).run &#123; <span class="literal">null</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">toString</span><span class="params">()</span></span>: String = <span class="string">"<span class="subst">$&#123;javaClass.simpleName&#125;</span>[<span class="variable">$name</span>]"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">Direction</span></span>(<span class="keyword">val</span> sign: <span class="built_in">Double</span>) &#123;</span><br><span class="line">        FORWARD(<span class="number">1.0</span>), REVERSED(-<span class="number">1.0</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">stop</span><span class="params">()</span></span> &#123;</span><br><span class="line">        power.close()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Motor has a data node <code>power</code>.</p>
+<h4 id="Servo"><a href="#Servo" class="headerlink" title="Servo"></a>Servo</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Servo</span></span>(name: String, range: ClosedFloatingPointRange&lt;<span class="built_in">Double</span>&gt;) : NamedComponent&lt;Servo&gt;(name),</span><br><span class="line">    Device, PositionOutput, PwmOutput &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> mapper = Lens(-<span class="number">1.0</span>, <span class="number">1.0</span>, range.start, range.endInclusive)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">val</span> position: OutputDriver&lt;<span class="built_in">Double</span>&gt; = OutputDriver &#123; raw -&gt;</span><br><span class="line">        raw.checkedValue(range)?.let &#123;</span><br><span class="line">            mapper(it)</span><br><span class="line">        &#125; ?: logger.warning(<span class="string">"Invalid servo position: <span class="variable">$raw</span>"</span>).run &#123; <span class="literal">null</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">val</span> pwmEnable: OutputDriver&lt;<span class="built_in">Boolean</span>&gt; = OutputDriver()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">toString</span><span class="params">()</span></span>: String = <span class="string">"<span class="subst">$&#123;javaClass.simpleName&#125;</span>[<span class="variable">$name</span>]"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Servo has two data nodes: <code>position</code> and <code>pwmEnable</code>.</p>
+<h3 id="Sensor"><a href="#Sensor" class="headerlink" title="Sensor"></a>Sensor</h3><p>All Sensors are <em>source</em> nodes. When a sensor value is updated in network communication, data is placed in its data node. It should be the starting point in the link. Let’s look at the most common sensors.</p>
+<h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Encoder</span></span>(name: String, cpr: <span class="built_in">Double</span> = <span class="number">360.0</span>) : NamedComponent&lt;Encoder&gt;(name), Sensor&lt;EncoderData&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> value = AtomicReference(EncoderData(.<span class="number">0</span>, .<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> ratio = <span class="number">2</span> * PI / cpr</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Current position */</span></span><br><span class="line">    <span class="keyword">val</span> position <span class="keyword">get</span>() = value.<span class="keyword">get</span>().position</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Current speed */</span></span><br><span class="line">    <span class="keyword">val</span> speed <span class="keyword">get</span>() = value.<span class="keyword">get</span>().speed</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">val</span> updated: ISource&lt;EncoderData&gt; = broadcast()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">update</span><span class="params">(new: <span class="type">EncoderData</span>)</span></span> &#123;</span><br><span class="line">        <span class="keyword">val</span> transformed = EncoderData(position * ratio, speed * ratio)</span><br><span class="line">        <span class="keyword">if</span> (value.getAndSet(transformed) != transformed)</span><br><span class="line">            updated tryPost transformed</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">toString</span><span class="params">()</span></span>: String = <span class="string">"<span class="subst">$&#123;javaClass.simpleName&#125;</span>[<span class="variable">$name</span>]"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>It can be seen that in addition to the reactive flow of data, it also stores the last data for combined time operations.</p>
+<h3 id="Robot"><a href="#Robot" class="headerlink" title="Robot"></a>Robot</h3><p>All devices are <em>component</em>, the robot is a <em>dynamic scope</em>, so the device can be <strong>setup</strong> to the bot. As mentioned in the <a href="https://www.mechdancer.org/Documentation/dependency/"><em>dependency</em></a> article, there may be some composite components in the robot that can rely on instances of the device. The robot initializes the <code>RobotComponent</code> in it when it initializes and configures the connection between the network communication and the dataflow.</p>
+<h3 id="Use-case"><a href="#Use-case" class="headerlink" title="Use case"></a>Use case</h3><p>Let’s see teleop program:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">object</span> RemoteControl : RobotProgram&lt;UnicornRobot&gt;() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> master = robot.master</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> helper = robot.helper</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="comment">//Chassis</span></span><br><span class="line">        master.updated - &#123;</span><br><span class="line">            MecanumChassis.Descartes(</span><br><span class="line">                it.leftStickY,</span><br><span class="line">                it.leftStickX,</span><br><span class="line">                -it.rightStickX</span><br><span class="line">            )</span><br><span class="line">        &#125; - robot.chassis.descartesControl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//Expander</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//Helper up: Expanding/Stop</span></span><br><span class="line">        helper.up.pressing - &#123; Expander.State.Expanding &#125; - Expander.state</span><br><span class="line">        helper.up.releasing - &#123; Expander.State.Stop &#125; - Expander.state</span><br><span class="line">        <span class="comment">//Helper down: Shirking/Stop</span></span><br><span class="line">        helper.down.pressing - &#123; Expander.State.Shrinking &#125; - Expander.state</span><br><span class="line">        helper.down.releasing - &#123; Expander.State.Stop &#125; - Expander.state</span><br><span class="line">        <span class="comment">//Helper left and right: Lock/Unlock</span></span><br><span class="line">        helper.left.pressing - &#123; <span class="literal">true</span> &#125; - Expander.lock</span><br><span class="line">        helper.right.pressing - &#123; <span class="literal">false</span> &#125; - Expander.lock</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Collector</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//Helper left stick: Lifting/Dropping/Stop</span></span><br><span class="line">        helper.leftStick.valueChanged - &#123;</span><br><span class="line">            <span class="keyword">when</span> &#123;</span><br><span class="line">                it.y &gt; <span class="number">0.5</span>  -&gt; Collector.ArmState.Lifting</span><br><span class="line">                it.y &lt; -<span class="number">0.5</span> -&gt; Collector.ArmState.Dropping</span><br><span class="line">                <span class="keyword">else</span>        -&gt; Collector.ArmState.Stop</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; - Collector.arm</span><br><span class="line">        <span class="comment">//Helper right trigger: Collecting/Stop</span></span><br><span class="line">        helper.rightTrigger.pressing - &#123; Collector.CollectorState.Collecting &#125; - Collector.core</span><br><span class="line">        helper.rightTrigger.releasing - &#123; Collector.CollectorState.Stop &#125; - Collector.core</span><br><span class="line">        <span class="comment">//Helper left bumper: Spiting/Stop</span></span><br><span class="line">        helper.leftBumper.pressing - &#123; Collector.CollectorState.Spiting &#125; - Collector.core</span><br><span class="line">        helper.leftBumper.releasing - &#123; Collector.CollectorState.Stop &#125; - Collector.core</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Dumper <span class="doctag">TODO:</span> Arguments</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//Master right bumper: Pushes rod 2 times</span></span><br><span class="line">        master.rightBumper.pressing - &#123; <span class="number">2</span> &#125; - Dumper.pushRod</span><br><span class="line">        master.y.pressing - &#123; <span class="number">0.35</span> + <span class="keyword">if</span> (Dumper.inSadArea) <span class="number">0.2</span> <span class="keyword">else</span> .<span class="number">0</span> &#125; - Dumper.power</span><br><span class="line">        master.y.releasing - &#123; .<span class="number">0</span> &#125; - Dumper.power</span><br><span class="line">        master.a.pressing - &#123; <span class="number">0.5</span> + <span class="keyword">if</span> (Dumper.inSadArea) <span class="number">0.2</span> <span class="keyword">else</span> .<span class="number">0</span> &#125; - Dumper.power</span><br><span class="line">        master.b.releasing - &#123; .<span class="number">0</span> &#125; - Dumper.power</span><br><span class="line">        <span class="comment">//Helper y: Enable dumper lock</span></span><br><span class="line">        helper.y.pressing linkTo &#123; Dumper.lockEnable = !Dumper.lockEnable &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Lifter</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//When master left trigger is pressed, robot lands to ground</span></span><br><span class="line">        <span class="comment">//Presses right trigger to interrupt</span></span><br><span class="line">        master.leftTrigger.pressing - &#123; Lifter.State.Landing &#125; - Lifter.state</span><br><span class="line">        master.rightTrigger.pressing - &#123;</span><br><span class="line">            <span class="keyword">if</span> (Lifter.lastState == Lifter.State.Landing)</span><br><span class="line">                Lifter.State.Stop</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                Lifter.State.Lifting</span><br><span class="line">        &#125; - Lifter.state</span><br><span class="line">        master.rightTrigger.releasing - &#123; Lifter.State.Stop &#125; - Lifter.state</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Dustpan</span></span><br><span class="line">        <span class="comment">//Master left bumper: dumps 1 time</span></span><br><span class="line">        master.leftBumper.pressing - &#123; <span class="number">1</span> &#125; - Dustpan.dump</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We should configure the link relationship when <code>init</code>. As shown in the snippet, when the gamepad1 value is updated, the remote sensing data is wrapped into a <em>chassis speed vector</em> and then flows into the <em>descartes controller</em> node of the chassis. When the button <code>up</code> of gampad2 is pressed, the state <code>Expanding</code> will flow into <code>state</code> of <code>Expander</code>. Because it is a remote control program, most of the links <em>source</em> are handles.</p>
+
+	
+			
+  	</div>
+	  
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/Documentation/slf4j-robotLog/" rel="prev" title="Slf4j-RobotLog">
+						Slf4j-RobotLog 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/Documentation/statemachine/" rel="next" title="State machine">
+						State machine
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Standalone TC',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class="m_widget about">
+
+<img class="avatar waves-image" src="https://github.com/MechDancer/mechdancer.github.io/blob/master/css/images/mechdancer2.png?raw=true">
+
+<div class="header">MechDancer</div>
+<div class="content">
+<div class="desc">The documentation of MechDancer Projects.</div>
+</div>
+</section>
+
+
+  <section class="m_widget links">
+<div class="header">Links</div>
+<div class="content">
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://www.mechdancer.org">
+            <div class="name">MechDancer Home</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://github.com/berberman">
+            <div class="name">berberman Github</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/mechdancer" class="social github" target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href="https://github.com/stkevintan/hexo-theme-material-flow" class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/node-waves/0.7.5/waves.min.js"></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/Documentation/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/Documentation/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/Documentation/js/search.js"></script>
+<script src="/Documentation/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

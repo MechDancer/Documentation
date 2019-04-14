@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Dependency | MechDancer Documentation</title>
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/MechDancer/mechdancer.github.io/master/css/images/favicon.png">
+  <link rel="alternate" href="/Documentation/atom.xml" title="MechDancer Documentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Abstractdependency is an abstraction of dynamic component lookup. Through defining a series of interfaces, it standardizes the definition of weak coupling  for components (global resources or function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dependency">
+<meta property="og:url" content="https://www.mechdancer.org/dependency/index.html">
+<meta property="og:site_name" content="MechDancer Documentation">
+<meta property="og:description" content="Abstractdependency is an abstraction of dynamic component lookup. Through defining a series of interfaces, it standardizes the definition of weak coupling  for components (global resources or function">
+<meta property="og:locale" content="en_US">
+<meta property="og:updated_time" content="2019-04-14T07:00:00.491Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dependency">
+<meta name="twitter:description" content="Abstractdependency is an abstraction of dynamic component lookup. Through defining a series of interfaces, it standardizes the definition of weak coupling  for components (global resources or function">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Documentation/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+</html>
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href="/Documentation/">
+				MechDancer Documentation
+			</a>
+			<div class="menu">
+				<ul class="h-list">
+					
+						<li>
+							<a class="flat-box nav-home" href="/Documentation/">
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class="flat-box nav-archives" href="/Documentation/archives">
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class="underline"></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search">
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a href="javascript:void(0)"><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class="s-menu"><a href="javascript:void(0)"><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class="nav-sub container container--flex">
+			<a class="logo" href="javascript:void(0)">
+				Word of Forks
+			</a>
+
+			<ul class="switcher h-list">
+				<li class="s-comment"><a href="javascript:void(0)"><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class="s-top"><a href="javascript:void(0)"><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class="s-toc"><a href="javascript:void(0)"><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/Documentation/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/Documentation/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-dependency" class="post white-box article-type-post" itemscope itemprop="blogPost">
+	<section class="meta">
+	<h2 class="title">
+  	<a href="/Documentation/dependency/">
+    	Dependency
+    </a>
+  </h2>
+	<!-- <time>
+		Jan 1, 9102
+	</time> -->
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">2.</span> <span class="toc-text">Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Definitions"><span class="toc-number">2.1.</span> <span class="toc-text">Definitions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Component"><span class="toc-number">2.1.1.</span> <span class="toc-text">Component</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dependent"><span class="toc-number">2.1.2.</span> <span class="toc-text">Dependent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dynamic-scope"><span class="toc-number">2.1.3.</span> <span class="toc-text">Dynamic scope</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract-components"><span class="toc-number">2.2.</span> <span class="toc-text">Abstract components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dependency-manager"><span class="toc-number">2.3.</span> <span class="toc-text">Dependency manager</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-cases"><span class="toc-number">3.</span> <span class="toc-text">Use cases</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+			<h3 class="title">
+			Repo: <a href="https://github.com/MechDancer/framework/tree/master/dependency">
+						dependency
+					</a>
+				</h3>	
+			<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><em>dependency</em> is an abstraction of <em>dynamic component lookup</em>. Through defining a series of interfaces, it standardizes the definition of weak coupling  for components (global resources or functional modules) depending each other in projects. Some operations are provided for developers to <strong>setup</strong> a component into <strong>dynamic scope</strong> concurrently, and identify component dependencies.</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><h3 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h3><h4 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">equals</span><span class="params">(other: <span class="type">Any</span>?)</span></span>: <span class="built_in">Boolean</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">hashCode</span><span class="params">()</span></span>: <span class="built_in">Int</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The core of this project, which classes should mark with, can be added to a <code>DynamicScope</code>. All dependencies are put in a hash set, thus developers can deal with conflict problems by overriding following two functions: <code>equals()</code> and <code>hashCode()</code>.</p>
+<h4 id="Dependent"><a href="#Dependent" class="headerlink" title="Dependent"></a>Dependent</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Dependent</span> : <span class="type">Component &#123;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">sync</span><span class="params">(dependency: <span class="type">Component</span>)</span></span>: <span class="built_in">Boolean</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Dependents are a kind of component that want to depends other components, i.e. find other components in the scope. <code>sync()</code> of dependents that haven’t found dependencies yet  will be called. It passes in a new dependency, dependencies can check whether this new dependency is what it’s waiting, or save dependency’s reference, get some information etc. Meanwhile, dependents should return if they are concerned about other components passed in later, which is commonly used for marking this dependent has already got all dependencies.</p>
+<h4 id="Dynamic-scope"><a href="#Dynamic-scope" class="headerlink" title="Dynamic scope"></a>Dynamic scope</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicScope</span> </span>&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> dependents : MutableList&lt;...&gt; = ...</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">val</span> components : Set&lt;Component&gt; = ...</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">open</span> <span class="keyword">infix</span> <span class="function"><span class="keyword">fun</span> <span class="title">setup</span><span class="params">(component: <span class="type">Component</span>)</span></span>: <span class="built_in">Boolean</span> = ...</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Dynamic scope is an aggregate of components bearing relationships between components. When a new component is set up, <code>components</code> will be updated, and those  marked with <code>Dependent</code> will be notified of updating dependencies by calling theirs <code>sync()</code>. Developers can call <code>setup()</code> to add a component into this scope, which returns <code>false</code> if there is a conflict problem occurred.</p>
+<h3 id="Abstract-components"><a href="#Abstract-components" class="headerlink" title="Abstract components"></a>Abstract components</h3><p>For easy of use, those two abstract class are defined:</p>
+<ul>
+<li><code>UniqueComponent</code></li>
+<li><code>NamedComponent</code></li>
+</ul>
+<p>The reason why <code>UniqueComponent</code> is named so is that it has a unique <strong>type</strong> in the dynamic scope, and it uses its <code>Class</code> as the symbol while checking conflicts. Similar to <code>UniqueComponent</code>, <code>NamedComponent</code> has a unique <strong>name</strong> as the symbol. Since then, developers can provide a type to get a<code>UniqueComponent</code> or a name to get a <code>NamedComponent</code> in the dynamic scope.</p>
+<h3 id="Dependency-manager"><a href="#Dependency-manager" class="headerlink" title="Dependency manager"></a>Dependency manager</h3><p>Once we have components mentioned above, providing parameters traversal components collection in dynamic scope for lookup some dependencies will be pretty common. Furthermore, developers should write a bunch of duplicated code in <code>sync()</code> if they want to use function provided by <code>Dependent</code>:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">Apple</span>&gt;</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Banana</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">Banana</span>&gt;</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cherry</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">Cherry</span>&gt;</span>()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FruitBasket</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">FruitBasket</span>&gt;</span>(), Dependent &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> apple: Apple</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> banana: Banana</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> cherry: Cherry</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">sync</span><span class="params">(dependency: <span class="type">Component</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">        <span class="keyword">when</span> (dependency) &#123;</span><br><span class="line">            <span class="keyword">is</span> Apple -&gt; apple = dependency</span><br><span class="line">            <span class="keyword">is</span> Banana -&gt; banana = dependency</span><br><span class="line">            <span class="keyword">is</span> Cherry -&gt; cherry = dependency</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ::apple.isInitialized &amp;&amp; ::banana.isInitialized &amp;&amp; ::cherry.isInitialized</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>FruitBasket</code> depends on <code>Apple</code>, <code>Banana</code> and <code>Cherry</code>. <code>sync()</code> should be written as above to get dependencies in the scope. <code>DependencyManager</code> can help to optimize code like this:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">Apple</span>&gt;</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Banana</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">Banana</span>&gt;</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cherry</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">Cherry</span>&gt;</span>()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FruitBasket</span> : <span class="type">UniqueComponent</span>&lt;<span class="type">FruitBasket</span>&gt;</span>(), Dependent &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> dependencyManager = DependencyManager()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> apple: Apple <span class="keyword">by</span> dependencyManager.must()</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> banana: Banana <span class="keyword">by</span> dependencyManager.must()</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> cherry: Cherry <span class="keyword">by</span> dependencyManager.must()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">sync</span><span class="params">(dependency: <span class="type">Component</span>)</span></span>: <span class="built_in">Boolean</span> = 	</span><br><span class="line">    		dependencyManager.sync(dependency)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Moreover, <code>DependencyManager</code> provides powerful functions, please see <a href="#Use-cases">use cases</a> for details.</p>
+<h2 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h2><ul>
+<li><a href="https://github.com/MechDancer/framework/tree/master/remote" target="_blank" rel="noopener">remote</a></li>
+<li><a href="https://github.com/StandaloneTC/host" target="_blank" rel="noopener">standalonetc</a></li>
+</ul>
+
+	
+			
+  	</div>
+	  
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/Documentation/dataflow/" rel="prev" title="Dataflow">
+						Dataflow 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/Documentation/mechdancerlib/" rel="next" title="MechDancer Lib">
+						MechDancer Lib
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Dependency',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class="m_widget about">
+
+<img class="avatar waves-image" src="https://github.com/MechDancer/mechdancer.github.io/blob/master/css/images/mechdancer2.png?raw=true">
+
+<div class="header">MechDancer</div>
+<div class="content">
+<div class="desc">The documentation of MechDancer Projects.</div>
+</div>
+</section>
+
+
+  <section class="m_widget links">
+<div class="header">Links</div>
+<div class="content">
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://www.mechdancer.org">
+            <div class="name">MechDancer Home</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://github.com/berberman">
+            <div class="name">berberman Github</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/mechdancer" class="social github" target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href="https://github.com/stkevintan/hexo-theme-material-flow" class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/node-waves/0.7.5/waves.min.js"></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/Documentation/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/Documentation/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/Documentation/js/search.js"></script>
+<script src="/Documentation/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
